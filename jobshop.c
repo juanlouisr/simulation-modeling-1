@@ -195,9 +195,6 @@ int main() /* Main function. */
     return 0;
 }
 
-
-
-
 void arrive(int new_job) /* Function to serve as both an arrival event of a job
             to the system, as well as the non-event of a job's
             arriving to a subsequent station along its
@@ -212,7 +209,7 @@ void arrive(int new_job) /* Function to serve as both an arrival event of a job
 
     event_schedule(sim_time + expon(mean_interarrival, STREAM_INTERARRIVAL), ARRIVAL_0);
 
-    job_shop_no = random_integer(prob_distrib_first, STREAM_JOB_SHOP);
+    job_shop_no = random_integer(prob_distrib_first, STREAM_JOB_TYPE);
 
     // fprintf(outfile, "\nRandom integer:%d", job_shop_no);
 
@@ -576,7 +573,6 @@ void depart_3() /* Event function for departure of a job from a particular
         arrive_3(2);
     }
 }
-
 
 void print_table_header(int job_shop_no)
 {
